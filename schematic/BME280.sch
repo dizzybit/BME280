@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:BME280-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -48,12 +49,12 @@ $EndComp
 $Comp
 L undo:DizzyBITLogo U2
 U 1 1 5C903A70
-P 13875 6225
-F 0 "U2" H 14253 6271 50  0000 L CNN
-F 1 "DizzyBITLogo" H 14253 6180 50  0000 L CNN
-F 2 "undo:DizzyBIT_silk_6.4" H 13875 6225 50  0001 C CNN
-F 3 "" H 13875 6225 50  0001 C CNN
-	1    13875 6225
+P 10250 6825
+F 0 "U2" H 10628 6871 50  0000 L CNN
+F 1 "DizzyBITLogo" H 10628 6780 50  0000 L CNN
+F 2 "undo:DizzyBIT_silk_6.4" H 10250 6825 50  0001 C CNN
+F 3 "" H 10250 6825 50  0001 C CNN
+	1    10250 6825
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -101,22 +102,14 @@ $EndComp
 $Comp
 L power:GND #PWR0103
 U 1 1 5C9DFFA8
-P 3975 3850
-F 0 "#PWR0103" H 3975 3600 50  0001 C CNN
-F 1 "GND" H 3980 3677 50  0000 C CNN
-F 2 "" H 3975 3850 50  0001 C CNN
-F 3 "" H 3975 3850 50  0001 C CNN
-	1    3975 3850
+P 2150 3850
+F 0 "#PWR0103" H 2150 3600 50  0001 C CNN
+F 1 "GND" H 2155 3677 50  0000 C CNN
+F 2 "" H 2150 3850 50  0001 C CNN
+F 3 "" H 2150 3850 50  0001 C CNN
+	1    2150 3850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3275 3275 3975 3275
-Wire Wire Line
-	3975 3275 3975 3850
-Wire Wire Line
-	2450 3125 2450 3275
-Wire Wire Line
-	2450 3275 2775 3275
 $Comp
 L power:+3.3V #PWR0101
 U 1 1 5CA75426
@@ -226,25 +219,21 @@ Wire Wire Line
 Wire Wire Line
 	5725 2750 5725 3850
 Text GLabel 4850 4375 0    50   Input ~ 0
-SCL
+I2C_SCL
 Wire Wire Line
 	4925 3150 4925 4375
 Wire Wire Line
 	4925 4375 4850 4375
 Text GLabel 4850 4575 0    50   Input ~ 0
-SDA
+I2C_SDA
 Wire Wire Line
 	5025 3150 5025 4575
 Wire Wire Line
 	5025 4575 4850 4575
-Text GLabel 4850 4825 0    50   Input ~ 0
-SDO_ADDR
 Wire Wire Line
 	4850 4825 5125 4825
 Wire Wire Line
 	5125 4825 5125 3150
-Text GLabel 4850 5125 0    50   Input ~ 0
-CS
 Wire Wire Line
 	4850 5125 5225 5125
 Wire Wire Line
@@ -265,10 +254,10 @@ Wire Wire Line
 Wire Wire Line
 	5225 5125 7500 5125
 Connection ~ 5225 5125
-Text GLabel 2775 3375 0    50   Input ~ 0
-SCL
 Text GLabel 3275 3375 2    50   Input ~ 0
-SDA
+I2C_SCL
+Text GLabel 3275 3275 2    50   Input ~ 0
+I2C_SDA
 Connection ~ 5125 4825
 $Comp
 L _passive:R R1
@@ -295,14 +284,8 @@ F 3 "" H 6825 2825 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6825 3300 6825 2825
-Text GLabel 2775 3475 0    50   Input ~ 0
-SDO_ADDR
-Text GLabel 2775 3575 0    50   Input ~ 0
-CS
 Text GLabel 3275 3475 2    50   Input ~ 0
-CS
-Text GLabel 3275 3575 2    50   Input ~ 0
-CS
+SPI_MISO
 $Comp
 L _passive:R R2
 U 1 1 5CA7B589
@@ -375,4 +358,29 @@ Wire Wire Line
 NoConn ~ 7650 5325
 Text Notes 625  975  0    100  ~ 0
 Temperature - Humidity - Atmospheric‎ Pressure Sensor
+Wire Wire Line
+	2450 3125 2450 3275
+Wire Wire Line
+	2450 3275 2775 3275
+Wire Wire Line
+	2775 3375 2150 3375
+Wire Wire Line
+	2150 3375 2150 3850
+Text GLabel 3275 3575 2    50   Input ~ 0
+SPI_CS
+Text GLabel 950  2850 0    50   Input ~ 0
+I2C_SCL
+Text GLabel 4850 5125 0    50   Input ~ 0
+SPI_CS
+NoConn ~ 2775 3475
+Text GLabel 4850 4825 0    50   Input ~ 0
+SPI_MISO
+Text GLabel 1800 3575 0    50   Input ~ 0
+SPI_CLK
+Wire Wire Line
+	2775 3575 1800 3575
+Text GLabel 1700 2850 2    50   Input ~ 0
+SPI_CLK
+Wire Wire Line
+	1700 2850 950  2850
 $EndSCHEMATC
