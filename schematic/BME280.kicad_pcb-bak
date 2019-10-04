@@ -212,12 +212,12 @@
   )
 
   (module undo:DizzyBIT_silk_6.4 (layer B.Cu) (tedit 0) (tstamp 5C9EB704)
-    (at 104.6506 78.0669)
+    (at 104.648 76.2635 180)
     (path /5C903A70)
-    (fp_text reference U2 (at 0 0) (layer B.SilkS) hide
+    (fp_text reference U2 (at 0 0 180) (layer B.SilkS) hide
       (effects (font (size 1.524 1.524) (thickness 0.3)) (justify mirror))
     )
-    (fp_text value DizzyBITLogo (at 0.75 0) (layer B.SilkS) hide
+    (fp_text value DizzyBITLogo (at 0.75 0 180) (layer B.SilkS) hide
       (effects (font (size 1.524 1.524) (thickness 0.3)) (justify mirror))
     )
     (fp_poly (pts (xy -1.736998 -1.35694) (xy -1.713527 -1.357864) (xy -1.69273 -1.359718) (xy -1.674002 -1.362542)
@@ -1085,7 +1085,7 @@
     (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
   )
   (gr_line (start 100.3046 97.917) (end 109.0041 97.917) (layer Edge.Cuts) (width 0.15) (tstamp 5D53DD52))
-  (gr_text BME280 (at 104.65435 74.8284 180) (layer B.SilkS)
+  (gr_text BME280 (at 104.65435 79.5655) (layer B.SilkS)
     (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
   )
   (gr_line (start 109.0041 97.917) (end 109.0041 73.9013) (layer Edge.Cuts) (width 0.15) (tstamp 5C4686F7))
